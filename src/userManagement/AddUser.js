@@ -35,7 +35,8 @@ const [status , setStatus] = useState('')
       }
       api.post("/",postData)
       .then((res) => {
-if(res.status == true){
+
+if(res.status == 201){
 
   navigate('/list')
         
@@ -43,7 +44,6 @@ if(res.status == true){
 
 }
   else{
-console.log("<><><>",res);
     toast.error(res.data.message)
 
   }     

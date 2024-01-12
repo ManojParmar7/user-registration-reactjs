@@ -39,7 +39,7 @@ const navigate = useNavigate()
         api.put(id, postData)
           .then((res) => {
             
-            if(res.status == true){
+            if(res.status == 200){
 
                 navigate('/list')
                       
