@@ -61,6 +61,13 @@ if(res.status == 201){
      
  <div className="mainBody">
   <section className="form-add">
+  <button
+          type="button"
+          onClick={() => navigate('/list')}
+          className="btn btn-primary mb-2"
+        >
+          Player List
+        </button>
     <header>SPL 2-Registration</header>
     <form onSubmit={handleSubmit(onSubmit)}className="form">
       <div className="input-box">
