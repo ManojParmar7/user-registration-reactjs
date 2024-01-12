@@ -5,7 +5,7 @@ import Swal from "sweetalert2"
 import withReactContent from "sweetalert2-react-content"
 import './User.css'
 import { toast } from "react-toastify";
-
+import Logo from "./Img/Photo from.jpg"
 function User() {
   const navigate = useNavigate();
   const [data,setData]=useState([])
@@ -64,10 +64,13 @@ function User() {
         >
           Add User
         </button>
+        
       </div>
 
       <div className="responsive-table-container">
+
         <table className="table">
+          
           <thead className="thead-dark">
             <tr>
               <th scope="col">Id No</th>

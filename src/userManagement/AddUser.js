@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { api } from "../helper/api";
 import { toast } from "react-toastify";
-
+import Logo from './Img/Photo from.jpg'
 const schema = yup
   .object({
     name: yup.string().required('Name is required'),
@@ -68,7 +68,9 @@ if(res.status == 201){
         >
           Player List
         </button>
-    <header>SPL 2-Registration</header>
+       <header><img className="ImgClass" src={Logo}></img></header> 
+    <header>
+    SPL 2-Registration </header>
     <form onSubmit={handleSubmit(onSubmit)}className="form">
       <div className="input-box">
         <label>Full Name</label>
@@ -115,7 +117,7 @@ if(res.status == 201){
         </div>
         <button   type="submit">Submit</button>
 
-
+       
       </div>
     </form>
   </section>

@@ -123,6 +123,14 @@
   padding: 20px;
   background: rgb(130, 106, 251);
 }
+
+.ImgClass {
+  width: 100px; /* Set the width and height to create a square */
+  height: 100px;
+  border-radius: 50%; /* Use border-radius to create a circular shape */
+  background-color: #3498db; 
+  text-align: center;/* Add a background color */
+}
 /* Media query for smaller screens, including many mobile devices */
 @media screen and (max-width: 768px) {
   /* Adjustments for smaller screens */
