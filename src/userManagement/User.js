@@ -4,12 +4,13 @@ import { api } from '../helper/api';
 import Swal from "sweetalert2"
 import withReactContent from "sweetalert2-react-content"
 import './User.css'
+import { toast } from "react-toastify";
+
 function User() {
   const navigate = useNavigate();
   const [data,setData]=useState([])
   const MySwal = withReactContent(Swal)
 
-  console.log(',.,.,.,.,.',data);
   const getAll = () => {
     api.get()
       .then((res) => {
@@ -43,8 +44,12 @@ function User() {
         if (result.value) {
           api.delete("/"+ id)
             .then((res) => {
+              toast.success(res.data.message)
               getAll();
             }).catch((error) => {
+
+              toast.error(error.message)
+
             })
         }
       })
@@ -75,12 +80,12 @@ function User() {
           </thead>
           <tbody>
 
-{data && data.map((data)=>(
+{data && data.map((data,key)=>(
 
 
 
 <tr>
-              <th scope="row">1</th>
+              <th scope="row">{key + 1}</th>
               <td>{data.name}</td>
               <td>{data.number}</td>
               <td>

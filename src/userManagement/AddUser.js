@@ -6,6 +6,8 @@ import { Controller, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { api } from "../helper/api";
+import { toast } from "react-toastify";
+
 const schema = yup
   .object({
     name: yup.string().required('Name is required'),
@@ -33,14 +35,22 @@ const [status , setStatus] = useState('')
       }
       api.post("/",postData)
       .then((res) => {
+if(res.status == true){
 
-        console.log("<><><>>res",res);
-        navigate('/list')
+  navigate('/list')
         
+  toast.success(res.data.message)
+
+}
+  else{
+console.log("<><><>",res);
+    toast.error(res.data.message)
+
+  }     
 
       }).catch((error) => {
         // handleErrorMessage(error,t)
-        console.log("<><><>>res",error);
+        toast.error('Failed to update user due to :' + error.message)
 
       })
   }
