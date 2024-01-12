@@ -50,7 +50,7 @@ console.log("<><><>",res);
 
       }).catch((error) => {
         // handleErrorMessage(error,t)
-        toast.error('Failed to update user due to :' + error.message)
+        toast.error(error.message)
 
       })
   }

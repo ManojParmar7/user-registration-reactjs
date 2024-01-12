@@ -6,6 +6,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { api } from "../helper/api";
+import { toast } from "react-toastify";
+
 const schema = yup
   .object({
     name: yup.string().required('Name is required'),
@@ -36,12 +38,23 @@ const navigate = useNavigate()
     
         api.put(id, postData)
           .then((res) => {
-            navigate('/list')
-    
+            
+            if(res.status == true){
+
+                navigate('/list')
+                      
+                toast.success(res.data.message)
+              
+              }
+                else{
+                  toast.error(res.data.message)
+              
+                }       
             
           })
           .catch((error) => {
-            
+            toast.error( error.message)
+
           })
       }
 
@@ -56,6 +69,8 @@ const navigate = useNavigate()
     
           })
           .catch((error) => {
+            toast.error(error.message)
+
           })
       }
     
