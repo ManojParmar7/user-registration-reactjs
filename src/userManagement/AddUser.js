@@ -83,7 +83,7 @@ console.log("<><><>",res);
               name="number"
               control={control}
               render={({ field }) => (
-        <input type="Number" placeholder="Enter Contact here" required="" {...field} />
+        <input maxlength="10" type="Number" placeholder="Enter Contact here" required="" {...field} />
         )}
         />
          {errors.number && (
