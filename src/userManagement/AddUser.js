@@ -11,7 +11,7 @@ import { toast } from "react-toastify";
 const schema = yup
   .object({
     name: yup.string().required('Name is required'),
-    number: yup.string().required('Phone no is required')
+    number: yup.string().required('Phone no is required').max(10, 'Phone no must be at most 10 characters'),
 
   })
 
